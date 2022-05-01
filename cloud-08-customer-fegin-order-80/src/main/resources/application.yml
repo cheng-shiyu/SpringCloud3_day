@@ -10,3 +10,21 @@ eureka:
     fetch-registry: true
     service-url:
       defaultZone:  http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+
+
+ribbon:
+#  建立连接需要的时间
+  ReadTimeout: 5000
+#  建立连接之后获取资源的最长等待时间
+  ConnecTimeout: 5000
+
+#对所有的日志进行debug级别监控
+#logging:
+#  level: debug
+logging:
+  level:
+#    以debug级别模式监控这个service下的所有接口
+    com.chengshiyu.springcloud.Service.PaymentFeginService: debug
+
+
+

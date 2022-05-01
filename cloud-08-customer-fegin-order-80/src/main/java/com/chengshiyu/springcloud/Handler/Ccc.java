@@ -73,4 +73,12 @@ public class Ccc {
         map.put("serial",payment.getSerial());
         return paymentFeginService.getcsy4(map);
     }
+
+
+
+    /*超时等待*/
+    @GetMapping("/feign/t7")
+    public CommonResult t7(){
+        return paymentFeginService.getcsy5();
+    }
 }

@@ -5,6 +5,7 @@ import com.chengshiyu.springcloud.entity.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
 
@@ -110,5 +111,17 @@ public class UserController {
     }
 
 
+    /*超时等待*/
+    @GetMapping(value = "/payment/csy5")
+    public CommonResult<Object> getcsy5(){
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        CommonResult<Object> result = new CommonResult<>();
+        result.setMessage("成功！！！等待3s中之后可以成功响应");
+        return result;
+    }
 
 }

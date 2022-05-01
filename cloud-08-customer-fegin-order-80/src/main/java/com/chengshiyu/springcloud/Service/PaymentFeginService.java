@@ -40,4 +40,10 @@ public interface PaymentFeginService {
     /*正常情况下应该是可以接收到参数的，但是现在是微服务，尝试一下，看看行不行*/
     @GetMapping(value = "/payment/csy1")
     public CommonResult<Payment> getcsy1(Payment payment);
+
+
+
+    /*超时等待*/
+    @GetMapping(value = "/payment/csy5")
+    public CommonResult<Object> getcsy5();
 }
