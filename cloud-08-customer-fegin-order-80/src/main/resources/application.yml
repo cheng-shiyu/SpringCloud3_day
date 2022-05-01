@@ -23,7 +23,7 @@ ribbon:
 #  level: debug
 logging:
   level:
-#    以debug级别模式监控这个service下的所有接口
+#    以debug级别模式监控这个s ervice下的所有接口
     com.chengshiyu.springcloud.Service.PaymentFeginService: debug
 
 
