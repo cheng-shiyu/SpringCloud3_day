@@ -1,6 +1,7 @@
 package com.chengshiyu.springcloud.Service;
 
 import com.chengshiyu.springcloud.entity.CommonResult;
+import com.chengshiyu.springcloud.entity.R;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,7 +9,6 @@ import org.springframework.stereotype.Component;
  * @data 2022/5/1.
  */
 @Component
-
 public class hystrixServiceImpl implements hystrixService{
     @Override
     public CommonResult<String> t1() {
@@ -29,5 +29,10 @@ public class hystrixServiceImpl implements hystrixService{
         CommonResult<String> result = new CommonResult<>();
         result.setMessage("t3方法响应失败，采取降级措施");
         return result;
+    }
+
+    @Override
+    public R t1(Integer num) {
+        return R.errror(402,"消费端进行了降级操作！！！！");
     }
 }

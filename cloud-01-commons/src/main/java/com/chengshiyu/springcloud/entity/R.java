@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class R {
+
     private int code;
     private String message;
     private Object data;
@@ -26,5 +27,11 @@ public class R {
     }
     public static R success(String message,Object data){
         return new R(200,message,data);
+    }
+
+
+    public static void main(String[] args) {
+        long round = Math.round(11.4);
+
     }
 }

@@ -1,9 +1,11 @@
 package com.chengshiyu.springcloud.Service;
 
 import com.chengshiyu.springcloud.entity.CommonResult;
+import com.chengshiyu.springcloud.entity.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author 程世玉
@@ -20,5 +22,10 @@ public interface hystrixService {
 
     /*报错*/
     @GetMapping("/hystrix/t3")
-    public CommonResult<String> t3();
+     CommonResult<String> t3();
+
+
+    /*熔断错误*/
+    @GetMapping("/rd/t1")
+    R t1(@RequestParam("num") Integer num);
 }
