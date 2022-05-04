@@ -19,7 +19,7 @@ public class UserHandler {
         return result;
     }
 
-    /*正常响应*/
+    /*超时等待*/
     @GetMapping("/hystrix/t2")
     public CommonResult<String> t2(){
 
