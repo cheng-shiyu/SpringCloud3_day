@@ -1,0 +1,23 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+#    配置我们远程仓库的路径
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/csylovewwj/springcloud_config.git
+          search-paths:
+            - springcloud_config  # 路径是路径，文件夹是文件夹，因为他们可以能并不是很相同
+          username: 13674971648  # 如果是公共仓库，则可以不用输入账号密码，如果是私有的，则需要输入账号密码
+          force-pull: true
+          password: csy123654
+      label: master  # 这个就是指定默认是选择在哪个分支下，默认是master，所以我们可以不用配置这个，如果想要选择默认其他路径就可以换
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka  # 集群版

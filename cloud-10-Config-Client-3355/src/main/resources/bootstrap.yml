@@ -1,0 +1,31 @@
+# 这个配置文件是系统级别的，所以它的加载优先级高于application.yml,所以在这里面的配置，
+# 负责与外部配置并解析
+
+server:
+  port: 3355
+spring:
+  application:
+    name: cloud-Config-Client
+  cloud:
+    config:
+      label: dev
+      name: config     # config-dev中的config
+      profile: dev     # config-dev中的dev
+      uri: http://localhost:3344
+#      uri: http://cloud-config-center:3344 # 尝试一下使用服务名字可以吗，可以通过eureka吗 ，很显然是不行的！！！
+      username: 13674971648
+      password: csy123654
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+
+
+#学习阶段，就先把所有的端口暴漏出来
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
