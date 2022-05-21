@@ -1,0 +1,13 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: cloud-Config-Client
+
+
+#学习阶段，就先把所有的端口暴漏出来
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

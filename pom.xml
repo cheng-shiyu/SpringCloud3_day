@@ -21,6 +21,9 @@
         <module>cloud-09-Gateway-9527</module>
         <module>cloud-01-Config-3344</module>
         <module>cloud-10-Config-Client-3355</module>
+        <module>cloud-09-Gateway-9528</module>
+        <module>cloud-01-config-server-3344</module>
+        <module>cloud-10-Config-Client-3366</module>
     </modules>
     <packaging>pom</packaging>
 
